@@ -97,7 +97,9 @@ class PageController extends Controller
        $this->validate($req,
         [
           'email'=>'required|email',
-          'password'=>'required|min:6|max:20'
+          'password'=>'required|min:6|max:20',
+     
+          
         ],
         [
           'email.required'=>'Vui lòng nhập email',
@@ -107,14 +109,25 @@ class PageController extends Controller
           'password.max'=>'Mật khẩu không quá 20 ký tự'
         ]);
        $credentials=array('email'=>$req->email,'password'=>$req->password);
+          $chuoi='nhanam945@gmail.com';
+       if($req->email==$chuoi)
+       {
+        $admin=array('email'=>$req->email,'password'=>$req->password);
+        if(Auth::attempt($admin))
+            {
+              return redirect()->route('layout');
+            }
+       }else
+       {
        if(Auth::attempt($credentials)){
-        return redirect()->back()->with(['flag'=>'success','message'=>'Đăng Nhập Thành công']);
+        return redirect()->route('trang-chu')->with(['flag'=>'success','message'=>'Đăng Nhập Thành công']);
        }
+    
        else{
-        return redirect()->back()->with(['flag'=>'danger','message'=>'Đăng Nhập Thành công']);
+        return redirect()->back()->with(['flag'=>'danger','message'=>'Đăng Nhập Thất bại']);
 
        }
-
+      }
     }
 
 
@@ -146,7 +159,7 @@ class PageController extends Controller
       $user->phone=$req->phone;
       $user->address=$req->address;
       $user->save();
-      return redirect()->back()->with('thành công ','Tạo tài khoản thành công');
+      return redirect()->route('login')->with(['flag'=>'success','message'=>'Tạo tài khoản thành công']);
 
 
     }

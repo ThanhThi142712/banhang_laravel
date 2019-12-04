@@ -47,7 +47,7 @@
 							<p>Options:</p>
 							<div class="single-item-options">
 																
-								<select class="wc-select" name="color">
+								<select class="wc-select" name="number">
 									<option>Số Lượng</option>
 									<option value="1">1</option>
 									<option value="2">2</option>

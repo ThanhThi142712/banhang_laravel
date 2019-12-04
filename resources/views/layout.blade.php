@@ -9,6 +9,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- bootstrap-css -->
 <link rel="stylesheet" href="quantri/css/bootstrap.min.css" >
+<!-- //jtable -->
+<link rel="stylesheet" href="quantri/css/jquery.dataTables.min.css" >
+
 <!-- //bootstrap-css -->
 <!-- Custom CSS -->
 <link href="quantri/css/style.css" rel='stylesheet' type='text/css' />
@@ -26,6 +29,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script src="quantri/js/jquery2.0.3.min.js"></script>
 <script src="quantri/js/raphael-min.js"></script>
 <script src="quantri/js/morris.js"></script>
+<!-- //script table -->
+<script src="quantri/js/jquery.dataTables.min.js"></script>
+<script>$(document).ready( function () {
+    $('#myTable').DataTable();
+} );</script>
+
 </head>
 <body>
 <section id="container">

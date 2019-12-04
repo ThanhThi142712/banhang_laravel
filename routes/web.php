@@ -74,5 +74,9 @@ Route::get('dang-xuat',[
 ]);
 /////////////////////////////////////////////////////////
 ////////////////backend////////////////////////////////
-Route::get('admin','AdminController@getindex');
-Route::get('layout','AdminController@getquantri');
+
+Route::get('layout',[
+	'as'=>'layout',
+	'uses'=>'AdminController@getquantri'
+]);
+Route::get('delete/{id}','AdminController@delete')->name('delete');
